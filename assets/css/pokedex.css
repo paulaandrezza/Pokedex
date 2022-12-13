@@ -86,6 +86,12 @@
     border-radius: 1rem;
 }
 
+.pokemon:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    scale: 1.03;
+}
+
 .pokemon .number {
     color: #000;
     opacity: .3;
@@ -101,8 +107,7 @@
 
 .pokemon .detail {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-between;
 }
 
@@ -144,6 +149,12 @@
     background-color: #6c79db;
     border: none;
     border-radius: 1rem;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    transform: scale(1.1);
 }
 
 @media screen and (min-width: 380px) {
