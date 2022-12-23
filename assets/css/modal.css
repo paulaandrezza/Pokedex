@@ -1,6 +1,14 @@
+:root {
+    --my-end-width-hp: 0px;
+    --my-end-width-atq: 0px;
+    --my-end-width-def: 0px;
+    --my-end-width-satq: 0px;
+    --my-end-width-sdef: 0px;
+    --my-end-width-spd: 0px;
+}
 
 .modal {
-    background-color: rgba(0, 0, 0, .1);
+    background-color: rgba(0, 0, 0, .8);
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +20,7 @@
 .modal-content {
     margin: 0 auto;
     margin-top: 5%;
-    max-width: 600px;
+    max-width: 300px;
     background-color: #eee;
     padding: 0px;
     box-shadow: 0 0 2px #fff;
@@ -38,16 +46,25 @@
     cursor: pointer;
 }
 
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+}
+
 .modal-body .name {
     display: flex;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
+    height: 50px;
+    margin-bottom: 10px;
 }
 
 .modal-body .name #title {
-    margin: 10rem;
-    padding: .5rem 1.2rem;
+    text-transform: capitalize;
+    margin: 1rem;
+    padding: .5rem 1rem;
     margin: .5rem .5rem;
     text-align: center;
 }
@@ -61,20 +78,37 @@
     opacity: 0.5;
 }
 
-.modal-body .detail {
-    display: flex;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
+.pokemon-detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+    margin: 0 10px;
 }
 
-.modal-body .detail .types {
+.modal-detail {
+    width: 280px;
+}
+
+.detail-status {
+    background-color: #7c7777;
+    padding: 0.6rem;
+    margin-top: 40px;
+    border-radius: 1rem;
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-body .modal-detail .types {
     padding: 0;
     margin: 0;
     list-style: none;
     display: flex;
 }
 
-.modal-body .detail .types .type {
+.modal-body .modal-detail .types .type {
     color: #fff;
     padding: .5rem 1.2rem;
     margin: .5rem .5rem;
@@ -84,13 +118,210 @@
     text-align: center;
 }
 
-.modal-body .info{
-    display: flex;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
+.generation {
+    margin-top: 30px;
+    margin-left: 20px;
+    color: rgb(5, 5, 104);
+    align-items: center;
+    font-size: 12px;
 }
 
-.modal-body .info img {
-    max-width: 100%;
-    height: 300px;
+.top-information {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.name-info span {
+    background-color: rgb(240, 126, 211);
+    padding: 0 10px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.img-pokemon {
+    text-align: center;
+    align-self: center;
+}
+
+#pokemon-detail-img {
+    max-width: 90%;
+    height: 250px;
+}
+
+
+.habilities-list{
+    padding: 0;
+    margin: 0.7rem 0.4rem;
+}
+
+.habilidade {
+    color: rgb(25,25,25);
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.statsContainer {
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 0.7rem;
+    width: 13rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: left;
+}
+
+.statsNameEBar {
+    display: flex;
+    margin: 2px 0;
+}
+
+.nameBar {
+    text-align: right;
+    width: 50px;
+    padding-right: 8px;
+}
+
+.statsBar {
+    height: 20px;
+    width: 120px;
+    margin: auto;
+    border-radius: 4px;
+    background-color: #ccc;
+    position: relative;
+}
+
+
+.statsBarProgressHp {
+    background-color: #5998d3;
+    border-radius: 4px;
+    position: absolute;
+    height: 100%;
+    animation: progress-animation-hp 2s ease;
+    animation-fill-mode: both;
+}
+
+.statsBar .statsBarProgressAtq {
+    background-color: #5998d3;
+    border-radius: 4px;
+    position: absolute;
+    height: 100%;
+    animation: progress-animation-atq 2s ease;
+    animation-fill-mode: both;
+}
+
+.statsBar .statsBarProgressDef {
+    background-color: #5998d3;
+    border-radius: 4px;
+    position: absolute;
+    height: 100%;
+    animation: progress-animation-def 2s ease;
+    animation-fill-mode: both;
+}
+
+.statsBar .statsBarProgressSAtq {
+    background-color: #5998d3;
+    border-radius: 4px;
+    position: absolute;
+    height: 100%;
+    animation: progress-animation-satq 2s ease;
+    animation-fill-mode: both;
+}
+
+.statsBar .statsBarProgressSDef {
+    background-color: #5998d3;
+    border-radius: 4px;
+    position: absolute;
+    height: 100%;
+    animation: progress-animation-sdef 2s ease;
+    animation-fill-mode: both;
+}
+
+.statsBar .statsBarProgressSpeed {
+    background-color: #5998d3;
+    border-radius: 4px;
+    position: absolute;
+    height: 100%;
+    animation: progress-animation-spd 2s ease;
+    animation-fill-mode: both;
+}
+
+@keyframes progress-animation-hp {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 60px;
+        /* var(--my-end-width-hp); */
+    }
+}
+
+@keyframes progress-animation-atq {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: var(--my-end-width-atq);
+    }
+}
+
+@keyframes progress-animation-def {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: var(--my-end-width-def);
+    }
+}
+
+@keyframes progress-animation-satq {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: var(--my-end-width-satq);
+    }
+}
+
+@keyframes progress-animation-sdef {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: var(--my-end-width-sdef);
+    }
+}
+
+@keyframes progress-animation-spd {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: var(--my-end-width-spd);
+    }
+}
+
+
+@media screen and (min-width: 780px) {
+    .modal-content {
+        max-width: 600px;
+    }
+    .pokemon-detail {
+        grid-template-columns: 1fr 1fr;
+    }
 }
