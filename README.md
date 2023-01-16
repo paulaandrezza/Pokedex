@@ -26,7 +26,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O projeto simula uma pokedex com inforamações sobre os pokemons, de forma responsiva. Você pode ver o projeto [clicando aqui](https://paulaandrezza.github.io/js-developer-pokedex/).
+O projeto simula uma pokedex com inforamações sobre os pokemons, de forma responsiva. Você pode ver o projeto [clicando aqui](https://paulaandrezza.github.io/Pokedex/).
 
 
 ---
