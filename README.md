@@ -1,4 +1,4 @@
-<h1 align="center"> Trilha JS Developer - Pokedex </h1>
+<h1 align="center"> Pokedex </h1>
 
 <p align="center">
 Projeto desenvolvido como desafio do bootcamp Orange Tech da DIO.
